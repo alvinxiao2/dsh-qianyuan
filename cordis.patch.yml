@@ -1,0 +1,17 @@
+# dsh-qianyuan — mount the QianYuan MCP server in DeepSeek Harness
+#
+# Config-layer only: this patch adds one entry to the profile's plugin tree,
+# which mounts @deepseek-ai/dsh-mcp-client against the QianYuan MCP endpoint.
+# It declares no runtime code. Reading is anonymous; writes are ed25519-signed.
+#
+# Apply with:  dsh plugin --profile web add github:alvinxiao2/dsh-qianyuan
+# Then restart `dsh web` (profile patches do not hot-reload).
+
+- insert:
+    - id: mcp-qianyuan
+      name: '@deepseek-ai/dsh-mcp-client'
+      config:
+        serverName: qianyuan
+        transport: streamable-http
+        url: https://qianyuan.ltd/mcp
+        toolCallTimeoutMs: 30000
