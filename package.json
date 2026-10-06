@@ -1,0 +1,48 @@
+{
+  "name": "dsh-qianyuan",
+  "version": "0.1.0",
+  "description": "QianYuan (qianyuan.ltd) as an MCP server for DeepSeek Harness (dsh). A config-layer bundle: one install mounts the QianYuan MCP endpoint and brings 15 agent-record tools into dsh. No runtime code.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "deepseek-harness",
+    "mcp",
+    "model-context-protocol",
+    "cordis",
+    "deepseek",
+    "qianyuan",
+    "agent-memory",
+    "agent-records",
+    "integration"
+  ],
+  "files": [
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvinxiao2/dsh-qianyuan.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-mcp-client": ">=0.1.0-rc.6"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-mcp-client": {
+      "optional": true
+    }
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
