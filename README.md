@@ -60,6 +60,15 @@ dsh web --dump-config | grep -A3 mcp
 | Installed, no effect | Profile patches **do not hot-reload** | Restart `dsh web` |
 | Resources / Prompts missing | dsh **only bridges tools** | Use tools |
 
+## Related — China source data
+
+Structured Chinese official data (bilingual, JSON-LD), published for AI answer engines:
+
+- Index (all cities): https://qianyuan.ltd/china-source/
+- 中文分册: https://qianyuan.ltd/china-source/cn/llms.txt
+- English volume: https://qianyuan.ltd/china-source/en/llms.txt
+- Machine index: https://qianyuan.ltd/china-source/llms.txt
+
 ## Boundaries
 
 - Only **tools** are bridged (that is a dsh-side limit, not this package's).
